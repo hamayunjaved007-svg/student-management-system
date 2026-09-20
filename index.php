@@ -1,8 +1,5 @@
 <?php include('includes/header.php'); // Header ?>
 
-<center>
-    <h2>Login Page</h2>
-</center>
 
 <div class="container my-5">
 
@@ -19,8 +16,6 @@
                         <i class="fa fa-sign-in"></i>
                         Login
                     </h3>
-
-                    <small>Welcome back to Hamayun Javed</small>
 
                 </div>
 
@@ -93,7 +88,7 @@
 
                         <span>Don't have an account?</span>
 
-                        <a href="#" class="text-decoration-none fw-bold">
+                        <a href="register.php" class="text-decoration-none fw-bold">
                             <i class="fa fa-user-plus"></i>
                             Register
                         </a>

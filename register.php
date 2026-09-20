@@ -1,5 +1,32 @@
 <?php include('includes/header.php'); // Header ?>
 
+<!-- This code is for alert for error -->
+<?php if (!empty($_GET['error'])) { ?>
+
+    <div id="errorAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
+
+        <i class="fa fa-exclamation-circle"></i>
+        <strong>Warning!</strong> Something went wrong!
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        </button>
+
+    </div>
+
+    <script>
+        setTimeout(function () {
+            var alert = document.getElementById('errorAlert');
+
+            if (alert) {
+                var bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+                bsAlert.close();
+            }
+        }, 3000);
+    </script>
+
+<?php } ?>
+
+
 
 <div class="container my-5">
 
@@ -147,7 +174,7 @@
 
                         <span>Already have an account?</span>
 
-                        <a href="#" class="text-decoration-none fw-bold">
+                        <a href="index.php" class="text-decoration-none fw-bold">
                             <i class="fa fa-sign-in"></i>
                             Login
                         </a>
