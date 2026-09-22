@@ -9,7 +9,12 @@ $gender = $_POST['gender'];
 // echo $name . ' ' . $email . ' ' . $whatsapp . ' ' . $password . ' ' . $confirm_password . ' ' . $gender;
 if ($password == $confirm_password) {
 
-    include('actions/cn.php');//connection for database
+    // $cn = mysqli_connect('localhost', 'root', '', 'student-management-system') or die("Connection failed!"); // for connection
+
+    include('cn.php');  //for connection with database
+
+
+
 
     $que = "SELECT * FROM users WHERE email = '$email' "; // for finding data already exist or not against email
     $result = mysqli_query($cn, $que) or die('Cannot run Query!'); //its running queries.

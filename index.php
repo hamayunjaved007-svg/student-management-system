@@ -1,5 +1,8 @@
 <?php include('includes/header.php'); // Header ?>
 
+<!-- Alert -->
+<?php include('includes/alert.php'); // Alert ?>
+
 
 <div class="container my-5">
 
@@ -22,7 +25,7 @@
                 <!-- Form -->
                 <div class="card-body p-4">
 
-                    <form>
+                    <form action="actions/login.php" method="get">
 
                         <!-- Email -->
                         <div class="mb-3">
@@ -32,7 +35,8 @@
                                 Email Address
                             </label>
 
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                            <input type="email" class="form-control" placeholder="Enter your email" name="email"
+                                required>
 
                         </div>
 
@@ -45,7 +49,8 @@
                                 Password
                             </label>
 
-                            <input type="password" class="form-control" placeholder="Enter your password" required>
+                            <input type="password" class="form-control" placeholder="Enter your password"
+                                name="password" required>
 
                         </div>
 
