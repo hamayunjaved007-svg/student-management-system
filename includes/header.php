@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,40 +36,67 @@
 
                     <ul class="navbar-nav ms-auto">
 
-                        <!-- Home -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="home.php">
-                                <i class="fa fa-home"></i> Home
-                            </a>
-                        </li>
 
-                        <!-- Account Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <?php if (!empty($_SESSION['name'])) { ?>
 
-                                <i class="fa fa-user"></i> Account
-                            </a>
+                            <!-- Home -->
+                            <li class="nav-item">
+                                <a class="nav-link active" href="home.php">
+                                    <i class="fa fa-home"></i> Home
+                                </a>
+                            </li>
 
-                            <ul class="dropdown-menu dropdown-menu-end">
+                            <!-- Account Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
 
-                                <!-- Login -->
-                                <li>
-                                    <a class="dropdown-item" href="index.php">
-                                        <i class="fa fa-sign-in"></i> Login
-                                    </a>
-                                </li>
+                                    <i class="fa fa-user"></i> Account
+                                </a>
 
-                                <!-- Register -->
-                                <li>
-                                    <a class="dropdown-item" href="register.php">
-                                        <i class="fa fa-user-plus"></i> Register
-                                    </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+
+                                    <!-- Login -->
+                                    <li>
+                                        <a class="dropdown-item" href="actions/logout.php">
+                                            <i class="fa fa-sign-in"></i> Logout
+                                        </a>
+                                    </li>
+
+
+
+                                <?php } else { ?>
+
+                                    <!-- Account Dropdown -->
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                                            data-bs-toggle="dropdown">
+
+                                            <i class="fa fa-user"></i> Account
+                                        </a>
+
+                                        <ul class="dropdown-menu dropdown-menu-end">
+
+                                            <!-- Login -->
+                                            <li>
+                                                <a class="dropdown-item" href="index.php">
+                                                    <i class="fa fa-sign-in"></i> Login
+                                                </a>
+                                            </li>
+
+                                            <!-- Register -->
+                                            <li>
+                                                <a class="dropdown-item" href="register.php">
+                                                    <i class="fa fa-user-plus"></i> Register
+                                                </a>
+                                            </li>
+
+                                            <?php
+                        } ?>
+
+                                    </ul>
                                 </li>
 
                             </ul>
-                        </li>
-
-                    </ul>
 
                 </div>
             </div>
